@@ -20,7 +20,7 @@
     - `ChatApp Project`: [localhost:8000](http://localhost:8000/)
     - `ChatApp Admin Page`: [localhost:8000/admin/](http://localhost:8000/admin/)
         - Admin 1 `Username: "admin"` and `Password: "admin"`
-        - Admin 2 `Username: "admin"` and `Password: "admin"`: 
+        - Admin 2 `Username: "ehsan"` and `Password: "admin"`: 
     - `PostgreSQL` database admin: [localhost:5444](http://localhost:5444/)
         - `Email: "admin@admin.dev"` and `Password: "admin"`: 
         - Host name: `localhost` or your `local IP` address.
