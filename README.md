@@ -57,13 +57,13 @@ Check redis is up
     ```shell
     sudo add-apt-repository ppa:deadsnakes/ppa
     ```
-
-    ```shell
-    sudo apt install python3-pip
-    ```
     
     ```shell
     sudo apt install python3
+    ```
+    
+    ```shell
+    sudo apt install python3-pip
     ```
 
 2. Install python requirements
