@@ -2,7 +2,7 @@
 
 > You can see project `screenshots` in `doc/screenshots` folder.
 
-## Setup with docker
+## Setup with docker (suggested)
 
 1. Install Docker in your OS. [Docker Installation](https://docs.docker.com/engine/install/) 
 
