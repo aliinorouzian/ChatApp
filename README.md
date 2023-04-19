@@ -59,6 +59,10 @@ Check redis is up
     ```
 
     ```shell
+    sudo apt install python3-pip
+    ```
+    
+    ```shell
     sudo apt install python3
     ```
 
@@ -71,6 +75,9 @@ Check redis is up
     ```
 
 3. Create virtual environment
+    ```shell
+    pip install virtualenv
+    ```
     ```shell
     virtualenv venv
     ```
