@@ -1,6 +1,6 @@
 # ChatApp
 
-> You can se project `screenshots` in `doc/screenshots` folder.
+> You can see project `screenshots` in `doc/screenshots` folder.
 
 ## Setup with docker
 
