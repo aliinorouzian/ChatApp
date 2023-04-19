@@ -1,0 +1,45 @@
+version: '3.10'
+services:
+  web:
+    build: .
+    command: sh -c "pip install -r requirements.txt && python /code/code/manage.py migrate && python /code/code/manage.py initcreatesuperuser && python /code/code/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+      - redis
+    restart: always
+
+  db:
+    image: postgres:15.2-alpine3.17
+    restart: always
+    environment:
+      - "POSTGRES_USER=admin"
+      - "POSTGRES_PASSWORD=admin"
+      # - "PGDATA=/var/lib/postgresql/data/pgdata"
+      - "POSTGRES_DB=ChatAppDB"
+    volumes:
+      - /d/volumes/postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4:7.0
+    ports:
+      - 5444:80
+    environment:
+      - "PGADMIN_DEFAULT_EMAIL=admin@admin.dev"
+      - "PGADMIN_DEFAULT_PASSWORD=admin"
+    restart: always
+    depends_on:
+      - db
+
+  redis:
+    image: redis:6.2.12-alpine3.17
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - /d/volumes/redis-data:/data

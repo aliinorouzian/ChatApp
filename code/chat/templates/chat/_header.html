@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">ChatApp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {% if '/chat/' in request.path %}active{% endif %}">
+                    <a class="nav-link" href="{% url 'chat:index' %}">Text Chat App <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if '/videochat/' in request.path %}active{% endif %}"
+                        href="{% url 'video_chat' %}">Video Chat App</a>
+                </li>
+
+            </ul>
+
+            {% if user.is_authenticated %}
+            <h6>
+                <a href="{% url 'logout' %}" class=" btn btn-outline-danger">Logout</a>
+            </h6>
+            {% endif %}
+
+            {% if not user.is_authenticated %}
+            <a href="{% url 'register' %}" class="btn btn-success mr-2">Sign Up</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-success">Login</a>
+            {% endif %}
+
+        </div>
+    </div>
+</nav>
